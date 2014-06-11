@@ -1,0 +1,17 @@
+<% provide(:title, "API") %>
+
+<p>Project provides a simple JSON endpoint for every url. It is accessed by issuing an HTTP GET request to the profile URL with .json added to the end.</p>
+<p class="label"><%= full_link request.url,"urls/my_url.json" %></p>
+
+<p>Here is an example response for a URLShortener API request. </p>
+<p class="label"><%= full_link request.url,"urls.json"%></p>
+
+<br />
+
+<p class="label">	
+	[<br>
+    {"link":"http://api.rubyonrails.org/","alias":"rubyapi"},<br>
+    {"link":"http://rubyonrails.org/","alias":"ror"},<br>
+    {"link":"http://ruby-doc.org/","alias":"doc"}<br>
+  ]
+</p> 

@@ -1,0 +1,5 @@
+<% provide(:title, "New URL") %>
+
+<%= render partial:"urls/form", locals:{url: @url} %>
+
+<%= link_to 'Back', urls_path,class:"button large" %>

@@ -1,0 +1,28 @@
+<% provide(:title, "Listing URLs") %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Link</th>
+      <th>Alias</th>
+      <th>Action</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%=link_to(truncate(url.link,length:60),url.link) %></td>
+        <td><%= truncate(url.alias,length:30) %></td>
+        <td><%= link_to 'Show', url_path(url.alias), class:"pagination center" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<center>
+<%= will_paginate @urls  %>
+<br>
+<%= link_to 'New URL', new_url_path,class:"button large" %>
+</center>

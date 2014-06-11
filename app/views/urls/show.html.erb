@@ -1,0 +1,13 @@
+<% provide(:title, "Shortener URL") %>
+
+<p>
+  <b class="label">Link</b>
+  <%= link_to((big_link(@url.link) ? @url.link : "Big Link"),@url.link) %>
+</p>
+
+<p>
+  <b class="label">Alias</b>
+  <%=link_to full_link(request.url,@url.alias),full_link(request.url,@url.alias) %>
+</p>
+
+<%= link_to 'Back', urls_path,class:"button large"  %>

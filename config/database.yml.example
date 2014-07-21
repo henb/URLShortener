@@ -4,8 +4,7 @@ development:
   encoding: unicode
   database: pg_development
   pool: 5
-  password: 
-
+  password:
 
 test:
   adapter: postgresql

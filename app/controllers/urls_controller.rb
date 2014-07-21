@@ -3,7 +3,6 @@ class UrlsController < ApplicationController
 
   def index
     @urls = Url.where(:public=>true).paginate(:page => params[:page],:per_page => (params[:limit] ? params[:limit] : 10) )
-      
   end
 
   def new
@@ -13,7 +12,7 @@ class UrlsController < ApplicationController
 
   def show
   end
-  
+
   def open_link
     redirect_to @url.link
   end
@@ -25,22 +24,19 @@ class UrlsController < ApplicationController
     respond_to do |format|
       if @url.save
         format.html { redirect_to url_path(@url.alias), notice: 'Url was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @url.alias }
       else
         format.html { render action: 'new' }
-        format.json { render json: @url.errors, status: :unprocessable_entity }
       end
     end
   end
 
-
   private
 
-    def set_url
-      @url = Url.find_by(:alias=>params[:id])
-    end
+  def set_url
+    @url = Url.find_by(:alias=>params[:id])
+  end
 
-    def url_params
-      params.require(:url).permit(:link,:alias,:public,:ip)
-    end
+  def url_params
+    params.require(:url).permit(:link,:alias,:public,:ip)
+  end
 end

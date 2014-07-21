@@ -22,7 +22,7 @@
 </head>
 
 <body>
- 
+
 <%= render "layouts/navbar"%>
 
 <div class="row">
@@ -33,7 +33,7 @@
         <div class="col-8">
           <%=render"layouts/flash"%>
           <h3><%= simple_header(yield(:title)) %></h3>
-          <hr /> 
+          <hr />
           <%= yield %>
         </div>
     <div class="col-2 text-center"></div>

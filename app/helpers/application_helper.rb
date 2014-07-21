@@ -11,7 +11,7 @@ module ApplicationHelper
 	def simple_header(header)
 		header && !header.empty? ? header : "URLShortener"
 	end
-	
+
 	def full_link(host,name)
 		host = host.to_s
 		host[0,host[host.index("//")+2..-1].index("/")+8] + name.to_s

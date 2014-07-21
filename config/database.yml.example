@@ -6,7 +6,6 @@ development:
   pool: 5
   password:
 
-
 test:
   adapter: postgresql
   encoding: unicode

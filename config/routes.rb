@@ -1,5 +1,5 @@
 UrlShortener::Application.routes.draw do
-  
+
   resources :urls
   root "static_pages#home"
   get '/api', to: 'static_pages#api'

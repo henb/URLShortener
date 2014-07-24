@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -22,26 +21,24 @@
 </head>
 
 <body>
+  <%= render "layouts/navbar"%>
 
-<%= render "layouts/navbar"%>
-
-<div class="row">
-  <div class="col-12 text-center">
-  </div>
   <div class="row">
-    <div class="col-2 text-center"></div>
-        <div class="col-8">
-          <%=render"layouts/flash"%>
-          <h3><%= simple_header(yield(:title)) %></h3>
-          <hr />
-          <%= yield %>
-        </div>
-    <div class="col-2 text-center"></div>
+    <div class="col-12 text-center">
+    </div>
+    <div class="row">
+      <div class="col-2 text-center"></div>
+          <div class="col-8">
+            <%=render"layouts/flash"%>
+            <h3><%= simple_header(yield(:title)) %></h3>
+            <hr />
+            <%= yield %>
+          </div>
+      <div class="col-2 text-center"></div>
+    </div>
   </div>
-</div>
 
-<%= render "layouts/footer"%>
-
+  <%= render "layouts/footer"%>
   <%= javascript_include_tag "application" %>
 </body>
 </html>

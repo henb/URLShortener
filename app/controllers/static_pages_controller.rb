@@ -7,13 +7,13 @@ class StaticPagesController < ApplicationController
   end
 
   def random
-  	@url = Url.where(:public=>true).sample
+    @url = Url.where(:public=>true).sample
 
-	respond_to do |format|
-        format.js
-        format.json
-        format.html
-      end
+    respond_to do |format|
+      format.js
+      format.json
+      format.html
+    end
   end
 
 end

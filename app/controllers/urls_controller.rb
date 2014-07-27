@@ -3,7 +3,7 @@ class UrlsController < ApplicationController
   respond_to :html, only: :create
 
   def index
-    @urls = Url.where(:public=>true).paginate(:page => params[:page],:per_page => (params[:limit] ? params[:limit] : 10) )
+    @urls = Url.published.pagination(params[:page], params[:limit])
   end
 
   def new

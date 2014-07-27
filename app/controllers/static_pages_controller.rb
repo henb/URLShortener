@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
   end
 
   def random
-    @url = Url.where(public: true).sample
+    @url = Url.published.sample
     respond_with @url
   end
 end

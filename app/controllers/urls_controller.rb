@@ -1,5 +1,6 @@
 class UrlsController < ApplicationController
-  before_action :set_url, only: [:show,:open_link]
+  before_action :set_url, only: [:show, :open_link]
+  respond_to :html, only: :create
 
   def index
     @urls = Url.where(:public=>true).paginate(:page => params[:page],:per_page => (params[:limit] ? params[:limit] : 10) )
@@ -8,7 +9,6 @@ class UrlsController < ApplicationController
   def new
     @url = Url.new
   end
-
 
   def show
   end
@@ -21,7 +21,7 @@ class UrlsController < ApplicationController
     @url = Url.new(url_params)
     @url.alias = snake_ur(@url.alias)
 
-    respond_to do |format|
+    respond_with do |format|
       if @url.save
         format.html { redirect_to url_path(@url.alias), notice: 'Url was successfully created.' }
       else
@@ -33,7 +33,7 @@ class UrlsController < ApplicationController
   private
 
   def set_url
-    @url = Url.find_by(:alias=>params[:id])
+    @url = Url.find_by(alias: params[:id])
   end
 
   def url_params

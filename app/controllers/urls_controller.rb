@@ -37,6 +37,6 @@ class UrlsController < ApplicationController
   end
 
   def url_params
-    params.require(:url).permit(:link,:alias,:public,:ip)
+    params.require(:url).permit(:link, :alias, :public, :ip)
   end
 end

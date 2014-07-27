@@ -10,7 +10,6 @@ class StaticPagesController < ApplicationController
 
   def random
     @url = Url.where(public: true).sample
-
-    respond_with
+    respond_with @url
   end
 end

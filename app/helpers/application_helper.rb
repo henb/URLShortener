@@ -1,6 +1,6 @@
 module ApplicationHelper
   def full_title(page_title)
-    base_title = "URLShortener"
+    base_title = 'URLShortener'
     if page_title.empty?
       base_title
     else
@@ -9,11 +9,11 @@ module ApplicationHelper
   end
 
   def simple_header(header)
-    header && !header.empty? ? header : "URLShortener"
+    header && !header.empty? ? header : 'URLShortener'
   end
 
-  def full_link(host,name)
+  def full_link(host, name)
     host = host.to_s
-    host[0,host[host.index("//")+2..-1].index("/")+8] + name.to_s
+    host[0, host[host.index('//') + 2..-1].index('/') + 8] + name.to_s
   end
 end

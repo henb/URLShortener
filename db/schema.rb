@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610144237) do
+ActiveRecord::Schema.define(version: 20_140_610_144_237) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "urls", id: false, force: true do |t|
-    t.text     "link",                   null: false
-    t.string   "alias",                  null: false
-    t.integer  "count",      default: 0
-    t.string   "ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "public"
+  create_table 'urls', id: false, force: true do |t|
+    t.text 'link',                   null: false
+    t.string 'alias',                  null: false
+    t.integer 'count',      default: 0
+    t.string 'ip'
+    t.datetime 'created_at'
+    t.datetime 'updated_at'
+    t.boolean 'public'
   end
 
-  add_index "urls", ["alias"], name: "index_urls_on_alias", using: :btree
-  add_index "urls", ["link"], name: "index_urls_on_link", using: :btree
+  add_index 'urls', ['alias'], name: 'index_urls_on_alias', using: :btree
+  add_index 'urls', ['link'], name: 'index_urls_on_link', using: :btree
 
 end

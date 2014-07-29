@@ -33,7 +33,7 @@ class UrlsController < ApplicationController
   private
 
   def set_url
-    @url = Url.find_by(alias: params[:id])
+    @url = Url.url_alias(params[:id])
   end
 
   def url_params

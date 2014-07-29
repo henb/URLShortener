@@ -5,4 +5,5 @@ class Url < ActiveRecord::Base
 
   scope :published, -> { where(public: true) }
   scope :pagination, ->(page, limit) { paginate(page: page, per_page: limit || 10) }
+  scope :url_alias, ->(id) { find_by(alias: id) }
 end

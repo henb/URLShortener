@@ -19,7 +19,6 @@ class UrlsController < ApplicationController
 
   def create
     @url = Url.new(url_params)
-    @url.alias = snake_ur(@url.alias)
 
     respond_with do |format|
       if @url.save

@@ -1,12 +1,14 @@
 <% provide(:title, "Random URL") %>
 <center>
-	<font class="button danger">API</font> <font class="button"><%= full_link request.url,"random.json" %></font>
-	<hr/>
-	<h1>Your random URL</h1>
-	<div class="link">
-		<p> <%=link_to full_link(request.url,@url.alias), @url.link %></p></br>
-	</div>
-	<%= button_to "Get URL", random_path, remote: true %>
-
-
+  <font class="button danger">API</font> <font class="button"><%= full_link request.url,"random.json" %></font>
+  <hr/>
+  <% if @url %>
+    <h1>Your random URL</h1>
+    <div class="link">
+      <p> <%=link_to full_link(request.url, @url.alias), @url.link %></p></br>
+    </div>
+    <%= button_to "Get URL", random_path, remote: true, class: "button large" %>
+  <% else %>
+    <h1>Not found</h1>
+  <% end %>
 </center>
